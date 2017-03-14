@@ -40,26 +40,7 @@ public class Practica75 {
                     break;
                  
                 case "2": //Borrar ciudad
-                    String ciudad;
-                    int indice=-1;
-                    if(ciudades.isEmpty()==true){
-                         System.out.println("El listado está vacio");
-                    }else{
-                        System.out.println("Ciudad que quieres borrar:");
-                        ciudad=pedirString();//Lectura ciudad
-                    
-                        if(Pattern.matches("\\d+",ciudad)==true){
-                           indice=Integer.parseInt(ciudad); 
-                        }else{
-                           indice=ciudades.indexOf(ciudad);
-                        }
-                        mostrarBorrar(ciudades,ciudad);
-                        /*Borrar ciudad*/
-                        ciudades.remove(ciudad);
-                    }
-                    if(ciudades.size()< list_hab.size()){
-                        list_hab.remove(indice);
-                    }
+                    borrarCiudad (ciudades, list_hab);
                     break;
                 
                 case "3": //Editar ciudad
@@ -68,7 +49,7 @@ public class Practica75 {
                     }else{
                         mostrarMenuEditar();
                         tarea2=pedirString();
-                        indice=-1;//Reinicializar indice por si ha sido utilizado
+                        int indice=-1;//Reinicializar indice por si ha sido utilizado
                         auxIndice="";
                         while(tarea!="C" && tarea!="c" && tarea!="H" && tarea!="h"){
                             switch (tarea2){
@@ -77,15 +58,7 @@ public class Practica75 {
                                     auxIndice=pedirString();//Lectura indice
                                     indice=pasarInt(auxIndice); //Cambio a int
                                     if(indice!=-1){
-                                        ciudades=editarCiudad(ciudades, indice);
-
-                                        System.out.println("Quieres editar los habitantes: S/N");
-                                        tarea2=pedirString();
-                                        if(tarea2.equals("S")||tarea2.equals("s")){
-                                            tarea2="H";
-                                        }else{
-                                            tarea2="0";
-                                        }
+                                        tarea2=editarCiudad(ciudades, indice);
                                     }
                                 break;
                             
@@ -95,7 +68,7 @@ public class Practica75 {
                                         auxIndice=pedirString();//Lectura indice
                                         indice=pasarInt(auxIndice); //Cambio a int
                                     }
-                                    list_hab=editarHabitantes(list_hab, indice);
+                                    editarHabitantes(list_hab, indice);
                                     tarea2="0";
                                 break;
                             }
@@ -185,7 +158,7 @@ public class Practica75 {
         return valido;
     }
     
-    public static ArrayList<String> añadirCiudad(ArrayList<String> x){
+    public static void añadirCiudad(ArrayList<String> x){
         String ciudad;
         System.out.println("Dime una ciudad");
         ciudad=pedirString();
@@ -199,32 +172,54 @@ public class Practica75 {
         }else{
             x.add(ciudad);
         }
-      
-        return x;   
     }
     
-    public static ArrayList<Integer> añadirHabitantes(ArrayList<Integer> x){
+    public static void añadirHabitantes(ArrayList<Integer> x){
         int habitantes;
+        String text_hab;
         System.out.println("Añadir habitantes:");
-        habitantes=pedirInt();
+        text_hab = pedirString();
+        habitantes=pasarInt(text_hab);
         if(validarHabitantes(habitantes)==true){
             x.add(habitantes);
         }else{
             System.out.println("Número de habitantes no válido");
         }
-        
-        return x;
     }
     
-    public static void mostrarBorrar(ArrayList<String> x, String y){
+    public static void mostrarBorrar(ArrayList<String> list_ciudades, String nombre_ciudad){
         /*Mostrar mensaje de borrado*/
-        if(Pattern.matches("\\d+", y)==true && Integer.parseInt(y)<x.size()){
-            System.out.println("Ciudad borrada: "+x.get(Integer.parseInt(y)));
-        }else if(x.contains(y)==true){
-            System.out.println(y+" ha sido borrada");
+        if(Pattern.matches("\\d+", nombre_ciudad)==true && Integer.parseInt(nombre_ciudad)<list_ciudades.size()){
+            System.out.println("Ciudad borrada: "+list_ciudades.get(Integer.parseInt(nombre_ciudad)));
+        }else if(list_ciudades.contains(nombre_ciudad)==true){
+            System.out.println(nombre_ciudad+" ha sido borrada");
         }else{
             System.out.println("La ciudad no existe en el listado o está fuera de rango");
         }
+    }
+    
+    public static void borrarCiudad (ArrayList<String> list_ciudades, ArrayList<Integer> habitantes ){
+        int indice=-1;
+        String ciudad;
+        if(list_ciudades.isEmpty()==true){
+            System.out.println("El listado está vacio");
+        }else{
+            System.out.println("Ciudad que quieres borrar:");
+            ciudad=pedirString();//Lectura ciudad
+                    
+            if(Pattern.matches("\\d+",ciudad)==true){
+                indice=Integer.parseInt(ciudad); 
+            }else{
+                indice=list_ciudades.indexOf(ciudad);
+            }
+            mostrarBorrar(list_ciudades,ciudad);
+            /*Borrar ciudad*/
+            list_ciudades.remove(ciudad);
+        }
+        if(list_ciudades.size()< habitantes.size()){
+            habitantes.remove(indice);
+        }
+        
     }
     
     public static void mostrarListadosCombinados(ArrayList<String> x, ArrayList<Integer> y){
@@ -244,8 +239,9 @@ public class Practica75 {
         System.out.println("C - Ciudades");
         System.out.println("H - Habitantes");
     }
-    public static ArrayList<String> editarCiudad(ArrayList<String> x, int y){
-        String ciudad;
+    public static String editarCiudad(ArrayList<String> x, int y){
+        String ciudad, tarea;
+        
         if(y<x.size() && y>=0){
             System.out.println("Ciudad por la que la quieres cambiar:");
             ciudad=pedirString();
@@ -253,34 +249,42 @@ public class Practica75 {
         }else{
             System.out.println("Posición fuera de rango");
         }
+        System.out.println("Quieres editar los habitantes: S/N");
+        tarea=pedirString();
+        if(tarea.equals("S")||tarea.equals("s")){
+            tarea="H";
+        }else{
+            tarea="0";
+        }
         
-        return x;
+        return tarea;
     }
     
-    public static ArrayList<Integer> editarHabitantes(ArrayList<Integer> x, int y){
+    public static void editarHabitantes(ArrayList<Integer> x, int y){
         int habitantes;
+        String text_hab;
             
         if(y<x.size()&& y>=0){
             System.out.println("Valor a editar: "+x.get(y));
             System.out.println("Valor por el que quieres cambiar:");
-            habitantes=pedirInt(); //Pedir nº de habitantes
+            text_hab=pedirString();
+            habitantes=pasarInt(text_hab); //Pedir nº de habitantes
             x.set(y, habitantes); //Metodo para borrar 
         }else{
             System.out.println("Indice fuera de rango");
         }
-        
-        return x;
     }
     
     public static void mostrarCiudad(ArrayList<String> x, ArrayList<Integer> y){
         int indice;
-        
+        String text_ind;
         if(x.isEmpty()==true){
             System.out.println("El listado está vacio");
         }else{
         
             System.out.println("Ciudad que quieres ver(posicion):");
-            indice=pedirInt();//Lectura ciudadro
+            text_ind=pedirString();
+            indice=pasarInt(text_ind);//Lectura ciudadro
             if(indice<x.size()){
                 System.out.print(x.get(indice)+": ");
                 System.out.print(y.get(indice)+"habitantes");
