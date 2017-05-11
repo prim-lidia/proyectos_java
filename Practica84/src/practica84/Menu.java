@@ -23,23 +23,41 @@ public class Menu {
         System.out.println("6.- Salir");
         System.out.println("¿Que operación deseas realizar?"); 
     }
-    public String pedirOperacion(){
-        Scanner read= new Scanner(System.in);
-        return read.nextLine();
-    }
     
-    public float pedirImporte(){
+    public double pedirDouble(){
         System.out.println("Importe:");
         Scanner read= new Scanner(System.in);
-        return read.nextFloat();
+        return read.nextDouble();
     }
     
-    public String pedirCuenta(){
+    public String pedirString(){
         Scanner read= new Scanner(System.in);
-        System.out.println("Cuenta:");
         return read.nextLine();//c.concat(read.nextLine());
     }
-    
+    public String pedirNombre(){
+        System.out.println("Nombre:");
+        return pedirString();
+    }
+    public String pedirApellido1(){
+        System.out.println("Primer apellido:");
+        return pedirString();
+    }
+    public String pedirApellido2(){
+        System.out.println("Segundo apellido:");
+        return pedirString();
+    }
+    public String pedirCuenta(){
+        System.out.println("Numero de cuenta:");
+        return pedirString();
+    }
+    public double pedirImporte(){
+        System.out.println("Importe:");
+        return pedirDouble();
+    }
+    public double pedirInteres(){
+        System.out.println("Tipo de interés:");
+        return pedirDouble();
+    }
     public void mostrarTrans(){
         System.out.println("-------------------------------");
         System.out.println("TRANSFERENCIA");

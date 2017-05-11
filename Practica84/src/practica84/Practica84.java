@@ -21,9 +21,9 @@ public class Practica84 {
         Cuenta c2 = new Cuenta("Patricia","Martinez","Caudet","157484223", 0.05, 3500);
         String cuenta, auxCuenta, opcion="0";
         cuenta = m.pedirCuenta();
-        while(! opcion.equals("6")){
+        while(! opcion.equals("7")){
             m.mostrarMenu();
-            opcion=m.pedirOperacion();
+            opcion=m.pedirString();
             switch(opcion){
                 case "1":
                     if(cuenta.equals("1")){ 

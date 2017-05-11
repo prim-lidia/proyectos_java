@@ -50,7 +50,7 @@ public class Cuenta {
     public Cuenta(Cuenta cuenta){
         this.nombre= cuenta.nombre;
         this.apellido1=cuenta.apellido1;
-        this.apellido1=cuenta.apellido2;
+        this.apellido2=cuenta.apellido2;
         this.numCuenta=cuenta.numCuenta;
         this.tipoInt=cuenta.tipoInt;
         this.saldo=cuenta.saldo;
@@ -73,7 +73,7 @@ public class Cuenta {
      * Modifica el segundo apellido del titular de la cuenta 
      * @param apellido2  Segundo apellido del titular de la cuenta
      */
-    public void setApellido21(String apellido2){
+    public void setApellido2(String apellido2){
         this.apellido2=apellido2;
     }
     /**
@@ -143,20 +143,20 @@ public class Cuenta {
         return saldo;
     }
     
-    public boolean saldoSuficiente(float importe){
+    public boolean saldoSuficiente(double importe){
         return (saldo>=importe);
     }
-    public void ingreso(float importe){
+    public void ingreso(double importe){
         this.saldo= saldo+importe;
     }
-    public void reintegro(float importe){
+    public void reintegro(double importe){
         if(saldoSuficiente(importe)==true){
             this.saldo=saldo-importe;
         }else{
             System.out.println("No dispone de saldo suficiente para hace el reintegro");
         }
     }
-    public void transferencia(float importe, Cuenta cuenta){
+    public void transferencia(double importe, Cuenta cuenta){
         if(saldoSuficiente(importe)==true){
             reintegro(importe);
             cuenta.ingreso(importe);
