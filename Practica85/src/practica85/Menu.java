@@ -67,10 +67,18 @@ public class Menu {
         System.out.println("3.- Transferencia");
         System.out.println("4.- Consultar saldo");
         System.out.println("5.- Consultar datos");
-        System.out.println("6.- Salir del programa");
+        System.out.println("6.- Modificar datos");
+        System.out.println("7.- Salir del programa");
         System.out.println("¿Que operación deseas realizar?"); 
     }
-    
+    public void menuModificar(){
+        System.out.println("MENU MODIFICAR DATOS:");
+        System.out.println("1.- Nombre");
+        System.out.println("2.- Primer apellido");
+        System.out.println("3.- Segundo apellido");
+        System.out.println("4.- Tipo de interés");
+        System.out.println("5.- Volver al menú anterior");
+    }
     public void mostrarTrans(){
         System.out.println("-------------------------------");
         System.out.println("TRANSFERENCIA");

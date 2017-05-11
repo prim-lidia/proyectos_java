@@ -99,6 +99,32 @@ public class Practica85 {
                                     m.mostrarDatos(account);
                                     break;
                                 case"6":
+                                    auxOption="";
+                                    while(! auxOption.equals("5")){
+                                        m.menuModificar();
+                                        auxOption=m.pedirString();
+                                        switch(auxOption){
+                                            case "1":
+                                                account.setNombre(m.pedirNombre());
+                                                break;
+                                            case "2":
+                                                account.setApellido1(m.pedirApellido1());
+                                                break;
+                                            case "3":
+                                                account.setApellido2(m.pedirApellido2());
+                                                break;
+                                            case "4":
+                                                account.setTipoInt(m.pedirInteres());
+                                                break;
+                                            case "5":
+                                                break;
+                                            default:
+                                                System.out.println("La operación no existe");
+                                                break;  
+                                        }
+                                    }
+                                    break;
+                                case "7":
                                     break;
                                 default:
                                     System.out.println("La tarea no existe");

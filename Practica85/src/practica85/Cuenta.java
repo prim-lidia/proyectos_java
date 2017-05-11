@@ -35,7 +35,7 @@ public class Cuenta {
     public Cuenta(String nombre, String apellido1, String apellido2, String numCuenta, double tipoInt, double saldo){
         this.nombre= nombre;
         this.apellido1=apellido1;
-        this.apellido1=apellido2;
+        this.apellido2=apellido2;
         this.numCuenta=numCuenta;
         this.tipoInt=tipoInt;
         this.saldo=saldo;
@@ -71,7 +71,7 @@ public class Cuenta {
      * Modifica el segundo apellido del titular de la cuenta 
      * @param apellido2  Segundo apellido del titular de la cuenta
      */
-    public void setApellido21(String apellido2){
+    public void setApellido2(String apellido2){
         this.apellido2=apellido2;
     }
     /**
