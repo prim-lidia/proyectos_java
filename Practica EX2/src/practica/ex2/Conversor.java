@@ -17,7 +17,7 @@ public class Conversor {
     public Conversor (){
         this.total=0;
         this.texto = new String[]{"Semanas","Días","Horas","Minutos","Segundos"};
-        this.tiempo= new int[][]{{60800,86400,3600,60,1},{0,0,0,0,0}};
+        this.tiempo= new int[][]{{604800,86400,3600,60,1},{0,0,0,0,0}};
     }
     
     public void setTotal(int segundos){
