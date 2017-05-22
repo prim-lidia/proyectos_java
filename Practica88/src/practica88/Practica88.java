@@ -17,12 +17,11 @@ public class Practica88 {
     public static void main(String[] args) {
         // Declarar objetos
         Libro libro= new Libro();
-        Libro auxLibro=new Libro();
         Ejemplar ejemplar= new Ejemplar();
-        Ejemplar auxEjemplar= new Ejemplar();
         Menu m = new Menu();
         int max= 2;//Numero máximo de libros y ejemplares/libro
         String opcion;
+        boolean salir=false, salir2=false;
         
         ArrayList<Libro> biblioteca = new ArrayList<>(); 
         do{
@@ -34,21 +33,23 @@ public class Practica88 {
                 case "1":
                     opcion="n";
                     while(opcion.equals("n")||opcion.equals("N")){
-                        libro.setTitulo(m.pedirTitulo());
-                        libro.setAutor(m.pedirAutor());
-                        libro.setCodLibro(m.pedirCodLibro());
+                        Libro auxLibro=new Libro();
+                        auxLibro.setTitulo(m.pedirTitulo());
+                        auxLibro.setAutor(m.pedirAutor());
+                        auxLibro.setCodLibro(m.pedirCodLibro());
                         opcion=m.añadirEjemplar();
                         while(opcion.equals("s")||opcion.equals("S")){
+                            Ejemplar auxEjemplar= new Ejemplar();
                             auxEjemplar.setCodEj(m.pedirCodEjemplar());
                             auxEjemplar.setIsbn(m.pedirIsbn());
-                            libro.setEjemplaresList(auxEjemplar);
-                            if(libro.getEjemplares().size()<max){
+                            auxLibro.setEjemplaresList(auxEjemplar);
+                            if(auxLibro.getEjemplares().size()<max){
                                 opcion=m.añadirEjemplar();
                             }else{
                                 opcion="n";
                             }   
                         }
-                        biblioteca.add(libro);
+                        biblioteca.add(auxLibro);
                         if(biblioteca.size()<max){
                             opcion=m.añadirLibro();
                         }else{
@@ -64,14 +65,15 @@ public class Practica88 {
                         }else{
                             opcion="s";
                             while((opcion.equals("s")||opcion.equals("S"))&&libro.getEjemplares().size()<max){
+                                Ejemplar auxEjemplar= new Ejemplar();
                                 auxEjemplar.setCodEj(m.pedirCodEjemplar());
                                 auxEjemplar.setIsbn(m.pedirIsbn());
                                 libro.setEjemplaresList(auxEjemplar);
                                 if(libro.getEjemplares().size()<max){
                                     opcion=m.añadirEjemplar();
-                                }else{
+                                 }else{
                                     opcion="n";
-                                }   
+                                }  
                             }
                         }
                     }else{
@@ -79,7 +81,8 @@ public class Practica88 {
                     }
                     break;
                 case "3":
-                    while(!opcion.equals("5")){
+                    salir2=false;
+                    while(salir2==false){
                         m.mostrarMenu();
                         opcion=m.pedirString();
                         if(biblioteca.isEmpty()==false){
@@ -87,11 +90,11 @@ public class Practica88 {
                                 case "1":
                                     libro=m.buscarLibro(m.pedirCodLibro(), biblioteca);
                                     if(!libro.getCodLibro().equals("")){
-                                        auxEjemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
-                                        if(auxEjemplar.getCodEj().equals("")){
+                                        ejemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
+                                        if(ejemplar.getCodEj().equals("")){
                                             System.out.println("No tenemos ese ejemplar");
                                         }else{
-                                           auxEjemplar.prestar();
+                                           ejemplar.prestar();
                                            System.out.println("Operación realizada correctamente");
                                         }
                                     }else{
@@ -101,11 +104,11 @@ public class Practica88 {
                                 case "2":
                                     libro=m.buscarLibro(m.pedirCodLibro(), biblioteca);
                                     if(!libro.getCodLibro().equals("")){
-                                        auxEjemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
-                                        if(auxEjemplar.getCodEj().equals("")){
+                                        ejemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
+                                        if(ejemplar.getCodEj().equals("")){
                                             System.out.println("No tenemos ese ejemplar");
                                         }else{
-                                            auxEjemplar.devolver();
+                                            ejemplar.devolver();
                                             System.out.println("Operación realizada correctamente");
                                         }
                                     }else{
@@ -114,7 +117,7 @@ public class Practica88 {
                                     break;
                                 case "3":
                                     if(biblioteca.isEmpty()==false){
-                                    libro=m.buscarLibro(m.pedirCodLibro(), biblioteca);
+                                        libro=m.buscarLibro(m.pedirCodLibro(), biblioteca);
                                         if(!libro.getCodLibro().equals("")){
                                             m.mostrarDatos(libro);
                                         }else{
@@ -141,8 +144,8 @@ public class Practica88 {
                                                     libro.setCodLibro(m.pedirCodLibro());
                                                     break;
                                                 case "4":
-                                                    auxEjemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
-                                                    if(auxEjemplar.getCodEj().equals("")){
+                                                    ejemplar=m.buscarEjemplar(m.pedirCodEjemplar(), libro.getEjemplares());
+                                                    if(ejemplar.getCodEj().equals("")){
                                                         System.out.println("No tenemos ese ejemplar");
                                                     }else{
                                                         do{
@@ -150,10 +153,10 @@ public class Practica88 {
                                                             opcion=m.pedirString();
                                                             switch(opcion){
                                                                 case "1":
-                                                                    auxEjemplar.setCodEj(m.pedirCodEjemplar());      
+                                                                    ejemplar.setCodEj(m.pedirCodEjemplar());      
                                                                     break;
                                                                 case "2":
-                                                                    auxEjemplar.setIsbn(m.pedirIsbn());
+                                                                    ejemplar.setIsbn(m.pedirIsbn());
                                                                     break;
                                                                 case "3":
                                                                     break;
@@ -162,7 +165,7 @@ public class Practica88 {
                                                                     break;
                                                             }
                                                         }while(!opcion.equals("3"));
-                                                        opcion="5";  //Para volver al menú operaciones
+                                                        opcion="5";
                                                     }
                                                     break;
                                                 case "5":
@@ -176,10 +179,15 @@ public class Practica88 {
                                         System.out.println("No tenemos ese libro");
                                     }
                                     break;
-                                case "5":
-                                    System.out.println("No exite está opción");
+                                case "5": 
+                                    salir2=true;
+                                    break;
+                                case "6":
+                                    salir2=true;
+                                    salir=true;
                                     break;
                                 default:
+                                    System.out.println("No exite está opción");
                                     break;
                             }
                         }else{
@@ -188,11 +196,12 @@ public class Practica88 {
                     }
                     break;
                 case "4":
+                    salir=true;
                     break;
                 default:
                     System.out.println("No exite está opción");
                     break;
             }
-        }while(!opcion.equals("7"));
+        }while(salir==false);
     }
 }

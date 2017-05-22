@@ -15,6 +15,7 @@ public class Libro {
     
     //Constructores
     public Libro(){
+        codLibro="";
         this.ejemplares= new ArrayList<>();
     }
     public Libro(String titulo, String autor, String codLibro, ArrayList<Ejemplar> ejemplares){
