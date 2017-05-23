@@ -75,28 +75,25 @@ public class Cuenta {
         this.apellido2=apellido2;
     }
     /**
-     * 
+     * Modifica el número de la cuenta
      * @param numCuenta  número de la cuenta
      */
     public void setNumCuenta(String numCuenta){
         this.numCuenta=numCuenta;
     }
     /**
-     * 
+     * Modifica el tipo de interé de la cuenta
      * @param tipoInt tipo de interés aplicado a la cuenta
      */
     public void setTipoInt(double tipoInt){
         this.tipoInt=tipoInt ;
     }
     /**
-     * 
+     * Modifica el saldo de la cuenta
      * @param saldo saldo de la cuenta con decimales
      */
     public void setSaldo(double saldo){
         this.saldo=saldo;
-    }
-    public void setTrans(){
-        
     }
     /**
      * El método devuelve el nombre del titular de la cuenta
@@ -140,13 +137,29 @@ public class Cuenta {
     public double getSaldo(){
         return saldo;
     }
-    
+    /**
+     * El método comprueba si hay saldo suficiente en la cuenta para
+     * poder realizar una retirada de dinero. 
+     * @param importe
+     * @return saldo suficiente (true/false)
+     */
     public boolean saldoSuficiente(float importe){
         return (saldo>=importe);
     }
+    /**
+     * El método módifica la propiedad saldo de la cuenta 
+     * añadiendo el importe que se introduce como parámetro
+     * @param importe 
+     */
     public void ingreso(float importe){
         this.saldo= saldo+importe;
     }
+    /**
+     * El método módifica la propiedad saldo de la cuenta 
+     * restando el importe introducido como parámetro
+     * siempre y cuando haya saldo suficiente en la cuenta
+     * @param importe 
+     */
     public void reintegro(float importe){
         if(saldoSuficiente(importe)==true){
             this.saldo=saldo-importe;
@@ -154,6 +167,13 @@ public class Cuenta {
             System.out.println("No dispone de saldo suficiente para hace el reintegro");
         }
     }
+    /**
+     * El método módifica la propiedad saldo de la cuenta 
+     * restando el importe introducido como parámetro
+     * y añade el mismo importe a la cuenta introducida como parametro
+     * @param importe de la transferencia
+     * @param cuenta de destino de la trasnferencia
+     */
     public void transferencia(float importe, Cuenta cuenta){
         if(saldoSuficiente(importe)==true){
             reintegro(importe);
