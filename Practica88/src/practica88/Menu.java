@@ -11,6 +11,10 @@ import java.util.Scanner;
  * @author lidia
  */
 public class Menu {
+    static Scanner read= new Scanner(System.in);
+    /**
+     * Método que muestra por pantalla el menú incial
+     */
     public void mostrarInicio(){
         System.out.println("---------------------------------------------");
         System.out.println("MENU INICIO:");
@@ -19,6 +23,9 @@ public class Menu {
         System.out.println("3.- Operaciones con libro/ejemplar");
         System.out.println("4.- Salir del programa");
     }
+    /**
+     * Método que muestra por pantalla el submenú operaciones
+     */
     public void mostrarMenu(){
         System.out.println("---------------------------------------------");
         System.out.println("MENU OPERACIONES:");
@@ -29,6 +36,10 @@ public class Menu {
         System.out.println("5.- Volver atrás");
         System.out.println("6.- Salir del programa");
     }
+    /**
+     * Método que muestra por pantalla el submenú
+     * para modificar datos del libro
+     */
     public void modificarDatos(){
         System.out.println("---------------------------------------------");
         System.out.println("DATO A MODIFICAR:");
@@ -38,6 +49,10 @@ public class Menu {
         System.out.println("4.- Ejemplar");
         System.out.println("5.- Volver atrás");
     }
+    /**
+     * Método que muestra por pantalla el submenú
+     * para modificar datos del ejemplar
+     */
     public void modificarDatosEjemplar(){
         System.out.println("---------------------------------------------");
         System.out.println("DATO A MODIFICAR:");
@@ -45,39 +60,81 @@ public class Menu {
         System.out.println("2.- ISBN");
         System.out.println("3.- Volver al menú operaciones");
     }
+    /**
+     * Método que pregunta si se quiere introducir 
+     * un ejemplar y devuelve la opción escogida
+     * @return opción escogida
+     */
     public String añadirEjemplar(){
         System.out.println("¿Quieres añadir ejemplar(S/N)?");
-        return pedirString();
-    }
-    public String añadirLibro(){
-        System.out.println("¿Has terminado de añadir libros(S/N)?");
-        return pedirString();
-    }
-    public String pedirString(){
-        Scanner read= new Scanner(System.in);
         return read.nextLine();
     }
+    public String pedirString(){
+        return read.nextLine();
+    }
+    /**
+     * Método que pregunta si se quiere introducir 
+     * un libro y devuelve la opción escogida
+     * @return 
+     */
+    public String añadirLibro(){
+        System.out.println("¿Has terminado de añadir libros(S/N)?");
+        return read.nextLine();
+    }
+    /**
+     * Método que pide por pantalla el título
+     * y devuelve la cadena de texto introducida por teclado.
+     * @return 
+     */
     public String pedirTitulo(){
         System.out.println("Título: ");
-        return pedirString();
+        return read.nextLine();
     }
+    /**
+     * Método que pide por pantalla el autor del libro
+     * y devuelve la cadena de texto introducida por teclado.
+     * @return 
+     */
     public String pedirAutor(){
         System.out.println("Autor: ");
-        return pedirString();
+        return read.nextLine();
     }
+    /**
+     * Método que pide por pantalla el código del libro
+     * y devuelve la cadena de texto introducida por teclado.
+     * @return 
+     */
     public String pedirCodLibro(){
         System.out.println("Código del libro: ");
-        return pedirString();
+        return read.nextLine();
     }
+    /**
+     * Método que pide por pantalla el código del ejemplar
+     * y devuelve la cadena de texto introducida por teclado.
+     * @return 
+     */
     public String pedirCodEjemplar(){
         System.out.println("Código del ejemplar: ");
-        return pedirString();
+        return read.nextLine();
     }
+    /**
+     * Método que pide por pantalla el ISBN
+     * y devuelve la cadena de texto introducida por teclado.
+     * @return 
+     */
     public String pedirIsbn(){
         System.out.println("ISBN: ");
-        return pedirString();
+        return read.nextLine();
     }
     
+    /**
+     * Método para recorrer el Listado de libros buscando coincidencia entre
+     * un código de libro dado y los que hay almacenados en el listado.
+     * si hay coincidencia devuelve el objeto libro y sino devuelve un objeto libro por defecto. 
+     * @param codLibro dado por el usuario
+     * @param biblioteca listado de objetos libro
+     * @return objeto libro
+     */
     public Libro buscarLibro(String codLibro, ArrayList<Libro> biblioteca){
         Libro auxLibro;
         Libro libro=new Libro();
@@ -89,6 +146,14 @@ public class Menu {
         }
         return libro;
     }
+    /**
+     * Método para recorrer el Listado de ejemplares buscando coincidencia entre
+     * un código de ejemplar dado y los que hay almacenados en el listado.
+     * si hay coincidencia devuelve el objeto ejemplar y sino devuelve un objeto ejemplar por defecto. 
+     * @param codEjemplar
+     * @param ejemplares
+     * @return objeto ejemplar
+     */
     public Ejemplar buscarEjemplar(String codEjemplar,ArrayList<Ejemplar> ejemplares){
         Ejemplar auxEjemplar;
         Ejemplar ejemplar=new Ejemplar();
@@ -102,6 +167,10 @@ public class Menu {
 
         return ejemplar;
     }
+    /**
+     * Método que dado un objeto libro devuvle los datos de este libro por pantalla.
+     * @param libro 
+     */
     public void mostrarDatos(Libro libro){
         Ejemplar ejemplar= new Ejemplar();
         System.out.println("Codigo Libro: "+libro.getCodLibro());
