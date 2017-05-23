@@ -69,13 +69,17 @@ public class Menu {
         System.out.println("¿Quieres añadir ejemplar(S/N)?");
         return read.nextLine();
     }
+    /**
+     * Metodo que lee un string por teclado y lo devuelve
+     * @return cadena de texto
+     */
     public String pedirString(){
         return read.nextLine();
     }
     /**
      * Método que pregunta si se quiere introducir 
      * un libro y devuelve la opción escogida
-     * @return 
+     * @return cadena de texto
      */
     public String añadirLibro(){
         System.out.println("¿Has terminado de añadir libros(S/N)?");
@@ -84,7 +88,7 @@ public class Menu {
     /**
      * Método que pide por pantalla el título
      * y devuelve la cadena de texto introducida por teclado.
-     * @return 
+     * @return cadena de texto
      */
     public String pedirTitulo(){
         System.out.println("Título: ");
@@ -93,7 +97,7 @@ public class Menu {
     /**
      * Método que pide por pantalla el autor del libro
      * y devuelve la cadena de texto introducida por teclado.
-     * @return 
+     * @return cadena de texto
      */
     public String pedirAutor(){
         System.out.println("Autor: ");
@@ -102,7 +106,7 @@ public class Menu {
     /**
      * Método que pide por pantalla el código del libro
      * y devuelve la cadena de texto introducida por teclado.
-     * @return 
+     * @return cadena de texto
      */
     public String pedirCodLibro(){
         System.out.println("Código del libro: ");
@@ -111,7 +115,7 @@ public class Menu {
     /**
      * Método que pide por pantalla el código del ejemplar
      * y devuelve la cadena de texto introducida por teclado.
-     * @return 
+     * @return cadena de texto
      */
     public String pedirCodEjemplar(){
         System.out.println("Código del ejemplar: ");
@@ -120,7 +124,7 @@ public class Menu {
     /**
      * Método que pide por pantalla el ISBN
      * y devuelve la cadena de texto introducida por teclado.
-     * @return 
+     * @return cadena de texto
      */
     public String pedirIsbn(){
         System.out.println("ISBN: ");
