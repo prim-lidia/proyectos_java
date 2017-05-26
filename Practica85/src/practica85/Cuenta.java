@@ -96,69 +96,69 @@ public class Cuenta {
         this.saldo=saldo;
     }
     /**
-     * El método devuelve el nombre del titular de la cuenta
+     * Devuelve el nombre del titular de la cuenta
      * @return el nombre del titular
      */
     public String getNombre(){
         return nombre;
     }
     /**
-     * El método devuelve el primer apellido del titular de la cuenta
+     * Devuelve el primer apellido del titular de la cuenta
      * @return  el primer apellido del titular
      */
     public String getApellido1(){
         return apellido1;
     }
     /**
-     * El método devuelve el segundo apellido del titular de la cuenta
+     * Devuelve el segundo apellido del titular de la cuenta
      * @return  el segundo apellido del titular
      */
     public String getApellido2(){
         return apellido2;
     }
     /**
-     * El método devuelve el número de cuenta
+     * Devuelve el número de cuenta
      * @return  el numero de cuenta
      */
     public String getNumCuenta(){
         return numCuenta;
     }
     /**
-     * El método devuelve el tipo de interés de la cuenta
+     * Devuelve el tipo de interés de la cuenta
      * @return  el tipo Interes de la cuenta
      */
     public double getTipoInt(){
         return tipoInt;
     }
     /**
-     * El método devuelve el saldo de la cuenta
+     * Devuelve el saldo de la cuenta
      * @return  el saldo  de la cuenta
      */
     public double getSaldo(){
         return saldo;
     }
     /**
-     * El método comprueba si hay saldo suficiente en la cuenta para
+     * Comprueba si hay saldo suficiente en la cuenta para
      * poder realizar una retirada de dinero. 
-     * @param importe
+     * @param importe dinero para realizar la operación
      * @return saldo suficiente (true/false)
      */
     public boolean saldoSuficiente(float importe){
         return (saldo>=importe);
     }
     /**
-     * El método módifica la propiedad saldo de la cuenta 
+     * Modifica la propiedad saldo de la cuenta 
      * añadiendo el importe que se introduce como parámetro
-     * @param importe 
+     * @param importe dinero para realizar la operación
      */
     public void ingreso(float importe){
         this.saldo= saldo+importe;
     }
     /**
-     * El método módifica la propiedad saldo de la cuenta 
+     * Modifica la propiedad saldo de la cuenta 
      * restando el importe introducido como parámetro
      * siempre y cuando haya saldo suficiente en la cuenta
-     * @param importe 
+     * @param importe dinero para realizar la operación
      */
     public void reintegro(float importe){
         if(saldoSuficiente(importe)==true){
@@ -168,10 +168,10 @@ public class Cuenta {
         }
     }
     /**
-     * El método módifica la propiedad saldo de la cuenta 
+     * Modifica la propiedad saldo de la cuenta 
      * restando el importe introducido como parámetro
      * y añade el mismo importe a la cuenta introducida como parametro
-     * @param importe de la transferencia
+     * @param importe importe de la transferencia
      * @param cuenta de destino de la trasnferencia
      */
     public void transferencia(float importe, Cuenta cuenta){
