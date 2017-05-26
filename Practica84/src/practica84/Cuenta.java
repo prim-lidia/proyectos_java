@@ -142,13 +142,30 @@ public class Cuenta {
     public double getSaldo(){
         return saldo;
     }
-    
+    /**
+     * Comprueba si hay saldo suficiente en la cuenta para
+     * poder realizar una retirada de dinero. 
+     * @param importe dinero para realizar la operación
+     * @return saldo suficiente (true/false)
+     */
     public boolean saldoSuficiente(double importe){
         return (saldo>=importe);
     }
+    /**
+     * Modifica la propiedad saldo de la cuenta 
+     * añadiendo el importe que se introduce como parámetro
+     * @param importe dinero para realizar la operación
+     */
     public void ingreso(double importe){
         this.saldo= saldo+importe;
     }
+    
+    /**
+     * Modifica la propiedad saldo de la cuenta 
+     * restando el importe introducido como parámetro
+     * siempre y cuando haya saldo suficiente en la cuenta
+     * @param importe dinero para realizar la operación
+     */
     public void reintegro(double importe){
         if(saldoSuficiente(importe)==true){
             this.saldo=saldo-importe;
@@ -156,6 +173,14 @@ public class Cuenta {
             System.out.println("No dispone de saldo suficiente para hace el reintegro");
         }
     }
+    
+    /**
+     * Modifica la propiedad saldo de la cuenta 
+     * restando el importe introducido como parámetro
+     * y añade el mismo importe a la cuenta introducida como parametro
+     * @param importe importe de la transferencia
+     * @param cuenta de destino de la trasnferencia
+     */
     public void transferencia(double importe, Cuenta cuenta){
         if(saldoSuficiente(importe)==true){
             reintegro(importe);
