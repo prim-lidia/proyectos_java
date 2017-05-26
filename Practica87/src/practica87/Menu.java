@@ -11,6 +11,9 @@ import java.util.Scanner;
  * @author lidia
  */
 public class Menu {
+    /**
+     * Muestra el menú principal
+     */
     public void mostrarMenu(){
         System.out.println("---------------------------------------------");
         System.out.println("MENU PRINCIPAL:");
@@ -20,6 +23,9 @@ public class Menu {
         System.out.println("4.- Modificar datos del libro");
         System.out.println("5.- Salir del programa");
     }
+    /**
+     * Muestra el menú parar elegir libro
+     */
     public void mostrarElegirLibro(){
         System.out.println("---------------------------------------------");
         System.out.println("ELECCIÓN LIBRO:");
@@ -27,6 +33,9 @@ public class Menu {
         System.out.println("2.- Escrito en el agua");
         System.out.println("3.- Volver a atrás");
     }
+    /**
+     * Muestra el menú parar modificar datos
+     */
     public void modificarDatos(){
         System.out.println("---------------------------------------------");
         System.out.println("DATO A MODIFICAR:");
@@ -36,11 +45,18 @@ public class Menu {
         System.out.println("4.- Nº ejemplares");
         System.out.println("5.- Volver atrás");
     }
-    
+    /**
+     * Devuelve un texto introducido por teclado
+     * @return texto introducido por teclado
+     */
     public String pedirString(){
         Scanner read= new Scanner(System.in);
         return read.nextLine();
     }
+    /**
+     * Devuelve un numero entero introducido por teclado
+     * @return numero entero
+     */
     public int pedirInt(){
         int aux;
         Scanner read= new Scanner(System.in);
@@ -48,23 +64,42 @@ public class Menu {
         read.nextLine();
         return aux; 
     }
+    /**
+     * Pide el ISBN por pantalla y devuelve el valor introducido po teclado
+     * @return texto introducido por teclado
+     */
     public String pedirIsbn(){
         System.out.println("Isbn:");
         return pedirString();
     }
+    /**
+     * Pide el Título por pantalla y devuelve el valor introducido por teclado
+     * @return texto introducido por teclado
+     */
     public String pedirTitulo(){
         System.out.println("Titulo:");
         return pedirString();
     }
+    /**
+     * Pide el Autor por pantalla y devuelve el valor introducido por teclado
+     * @return texto introducido por teclado
+     */
     public String pedirAutor(){
         System.out.println("Autor:");
         return pedirString();
     }
-    
+    /**
+     * Pide el núemro de ejemplares por pantalla y devuelve el valor introducido por teclado
+     * @return número introducido por teclado
+     */
     public int pedirNumEjemp(){
         System.out.println("Nº ejemplares:");
         return pedirInt();
     }
+    /**
+     * Muestra los datos del la clase Libro @link 
+     * @param libro objeto Libro
+     */
     public void mostrarDatos(Libro libro){
         String estado;
         System.out.println("Título: "+libro.getTitulo());
