@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Menu {
     /**
-     * Metodo que lee un string por teclado y lo devuelve
+     * Lee un string por teclado y lo devuelve
      * @return cadena de texto
      */
     public String pedirString(){
@@ -19,7 +19,7 @@ public class Menu {
         return read.nextLine();
     }
     /**
-     * Metodo que lee un número por teclado y lo devuelve
+     * Lee un número por teclado y lo devuelve
      * @return número decimal
      */
     public Float pedirFloat(){
@@ -27,7 +27,7 @@ public class Menu {
         return read.nextFloat();
     }
     /**
-     * Método que muestra por pantalla el menú incial
+     * Muestra por pantalla el menú incial
      */
     public void MenuCuenta(){
         System.out.println("-------------------------------");
@@ -37,7 +37,7 @@ public class Menu {
         System.out.println("3.- Salir del programa");
     }
     /**
-     * Método que pide por pantalla el número de cuenta
+     * Pide por pantalla el número de cuenta
      * y devuelve la cadena de texto introducida por teclado.
      * @return  cadena de texto 
      */
@@ -46,7 +46,7 @@ public class Menu {
         return pedirString();
     }
     /**
-     * Método que pide por pantalla número de cuenta para una transferencia
+     * Pide por pantalla número de cuenta para una transferencia
      * y devuelve la cadena de texto introducida por teclado.
      * @return cadena de texto
      */
@@ -55,7 +55,7 @@ public class Menu {
         return pedirString();
     }
     /**
-     * Método que pide por pantalla el nombre del titular
+     * Pide por pantalla el nombre del titular
      * y devuelve la cadena de texto introducida por teclado.
      * @return  cadena de texto 
      */
@@ -64,7 +64,7 @@ public class Menu {
         return pedirString();
     }
     /**
-     * Método que pide por pantalla el primer apellido del titular
+     * Pide por pantalla el primer apellido del titular
      * y devuelve la cadena de texto introducida por teclado.
      * @return  cadena de texto 
      */
@@ -73,7 +73,7 @@ public class Menu {
         return pedirString();
     }
     /**
-     * Método que pide por pantalla el segundo apellido del titular
+     * Pide por pantalla el segundo apellido del titular
      * y devuelve la cadena de texto introducida por teclado.
      * @return  cadena de texto 
      */
@@ -82,7 +82,7 @@ public class Menu {
         return pedirString();
     }
     /**
-     * Método que pide por pantalla el tipo de interesa
+     * Pide por pantalla el tipo de interesa
      * y devuelve el numero decimal introducida por teclado.
      * @return  numero decimal 
      */
@@ -91,7 +91,7 @@ public class Menu {
         return pedirFloat();
     }
     /**
-     * Método que pide por pantalla el saldo incial
+     * Pide por pantalla el saldo incial
      * y devuelve el numero decimal introducida por teclado.
      * @return  numero decimal 
      */
@@ -100,7 +100,7 @@ public class Menu {
         return pedirFloat();
     }
     /**
-     * Método que pide por pantalla el importe para la operación
+     * Pide por pantalla el importe para la operación
      * y devuelve el numero decimal introducida por teclado.
      * @return  numero decimal 
      */
@@ -109,7 +109,7 @@ public class Menu {
         return pedirFloat();
     }
     /**
-     * Método que muestra por pantalla el submenú operaciones
+     * Muestra por pantalla el submenú operaciones
      */
     public void MenuOperaciones(){
         System.out.println("-------------------------------");
@@ -124,7 +124,7 @@ public class Menu {
         System.out.println("¿Que operación deseas realizar?"); 
     }
     /**
-     * Método que muestra por pantalla el submenú modificar datos
+     * Muestra por pantalla el submenú modificar datos
      */
     public void menuModificar(){
         System.out.println("MENU MODIFICAR DATOS:");
@@ -135,7 +135,7 @@ public class Menu {
         System.out.println("5.- Volver al menú anterior");
     }
     /**
-     * Método que muestra por pantalla un encabezado
+     * Muestra por pantalla un encabezado
      * para la operacion transferencia
      */
     public void mostrarTrans(){
@@ -143,7 +143,7 @@ public class Menu {
         System.out.println("TRANSFERENCIA");
     }
     /**
-     * Método que muestra por pantalla un encabezado
+     * Muestra por pantalla un encabezado
      * para la operacion ingreso
      */
     public void mostrarIngreso(){
@@ -151,7 +151,7 @@ public class Menu {
         System.out.println("INGRESO");
     }
     /**
-     * Método que muestra por pantalla un encabezado
+     * Muestra por pantalla un encabezado
      * para la operacion reintegro
      */
     public void mostrarReintegro(){
@@ -160,9 +160,9 @@ public class Menu {
         System.out.println();
     }
     /**
-     * Método que dado un objeto cuenta 
-     * devuelve por pantalla los datos de este cuenta .
-     * @param c objeto cuenta
+     * Devuelve por pantalla los datos de este cuenta
+     * dado un objeto Cuenta 
+     * @param c objeto Cuenta
      */
     public void mostrarDatos(Cuenta c){
         System.out.println("-------------------------------");
@@ -175,9 +175,9 @@ public class Menu {
         
     }
     /**
-     *  Método que dado un objeto cuenta 
-     * devuelve por pantalla el saldo de este cuenta.
-     * @param c 
+     * Devuelve por pantalla el saldo de este cuenta
+     * dado un objeto Cuenta 
+     * @param c objeto Cuenta
      */
     public void mostrarSaldo(Cuenta c){
         System.out.println("-------------------------------");
