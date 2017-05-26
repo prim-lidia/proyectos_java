@@ -41,16 +41,16 @@ public class Practica76 {
 
         switch(calc.getOpcion()){
             case"+":
-                operacion.suma(operacion.getOperadorA(), operacion.getOperadorB());
+                operacion.suma();
                 break;
             case "-":
-                operacion.resta(operacion.getOperadorA(),operacion.getOperadorB());
+                operacion.resta();
                 break;
             case "x":
-                operacion.multiplicacion(operacion.getOperadorA(),operacion.getOperadorB());
+                operacion.multiplicacion();
                 break;
             case "/":
-                operacion.division(operacion.getOperadorA(),operacion.getOperadorB());
+                operacion.division();
                 break;
             default:
                 System.out.println("La operacioón no existe");
