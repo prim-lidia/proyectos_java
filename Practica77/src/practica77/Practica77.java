@@ -28,8 +28,8 @@ public class Practica77 {
         c1.setRadio(t1.establecerNum(read.nextLine())); //Lectura teclado
         
         /* Modificar Area y Longitu */
-        c1.calcularArea(c1.getRadio());
-        c1.calcularLongitud(c1.getRadio());
+        c1.calcularArea();
+        c1.calcularLongitud();
         
         /* Imprimir datos */
         System.out.println();
