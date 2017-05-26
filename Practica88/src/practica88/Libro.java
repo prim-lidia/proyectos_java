@@ -50,28 +50,28 @@ public class Libro {
     }
     
     /**
-     * Método que modifica el título del libro
-     * @param titulo 
+     * Modifica el título del libro
+     * @param titulo título del libro
      */
     public void setTitulo(String titulo){
         this.titulo=titulo;
     }
     /**
-     * Método que modifica el autor del libro
-     * @param autor 
+     * Modifica el autor del libro
+     * @param autor nombre y apellidos del autor del libro
      */
     public void setAutor(String autor){
         this.autor=autor;
     }
     /**
-     * Método que modifica el cdóigo de identificación del libro
-     * @param codLibro 
+     * Modifica el código de identificación del libro
+     * @param codLibro código de identificación del libro
      */
     public void setCodLibro(String codLibro){
         this.codLibro=codLibro;
     }
     /**
-     * Método para añadir un ejemplar al ArrayList de ejemplares.
+     * Añade un ejemplar al ArrayList de ejemplares.
      * El ejemplar añadido será introducido como parámetro
      * @param ejemplar del libro a añadir
      */
@@ -79,7 +79,7 @@ public class Libro {
         ejemplares.add(ejemplar);    
     }
     /**
-     * Método para quitar un ejemplar al ArrayList de ejemplares.
+     * Quita un ejemplar al ArrayList de ejemplares.
      * El ejemplar quitado será introducido como parámetro
      * @param ejemplar del libro a quitar
      */
@@ -87,42 +87,42 @@ public class Libro {
         ejemplares.remove(ejemplar);
     }
     /**
-     * Método para limpiar el ArrayList de ejemplares.
+     * Limpia el ArrayList de ejemplares.
      */
     public void clearEjemplaresList(){
         ejemplares.clear();
     }
     
     /**
-     * El método devuelve el título del libro
+     * Devuelve el título del libro
      * @return título del libro
      */
     public String getTitulo(){
         return titulo;
     }
     /**
-     * El método devuelve el nombre del autor del libro
-     * @return 
+     * Devuelve el nombre del autor del libro
+     * @return nombre y apellidos del autor
      */
     public String getAutor(){
         return autor;
     }
     /**
-     * El método devuelve el código de identificación del libro
-     * @return 
+     * Devuelve el código de identificación del libro
+     * @return código de identificación del libro
      */
     public String getCodLibro(){
         return codLibro;
     }
     /**
-     * El método devuelve el ArrayList de los ejemplares del libro
+     * Devuelve el ArrayList de los ejemplares del libro
      * @return  Listado de los ejemplares del libro
      */
     public ArrayList<Ejemplar> getEjemplares(){
         return ejemplares;
     }
     /**
-     * El método devuelve el ejemplar del ArrayList de ejemplares
+     * Devuelve el ejemplar del ArrayList de ejemplares
      * que ocupa la posición i
      * @param i posición del ejemplar en el ArrayList
      * @return ejemplar del libro
