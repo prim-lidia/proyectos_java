@@ -10,7 +10,21 @@ import java.util.ArrayList;
  * @author lidia
  */
 public class Libro {
-    private String titulo, autor,codLibro;
+    /**
+     * Título del libro
+     */
+    private String titulo;
+    /**
+     * Nombre y apellidos del autor del libro
+     */
+    private String autor;
+    /**
+     * Código de identificación del libro
+     */
+    private String codLibro;
+    /**
+     * listado de objetos Ejemplar
+     */
     private ArrayList<Ejemplar> ejemplares;
     
     /**
@@ -26,10 +40,10 @@ public class Libro {
      * Constructor con paŕametros de la clase Libro
      * asigna a las propiedasdes del objeto el valor
      * de los parametros introducidos
-     * @param titulo
-     * @param autor
-     * @param codLibro
-     * @param ejemplares 
+     * @param titulo título del libro
+     * @param autor nombre y apellidos del autor del libro
+     * @param codLibro código de identificación del libro
+     * @param ejemplares listado de objetos Ejemplar
      */
     public Libro(String titulo, String autor, String codLibro, ArrayList<Ejemplar> ejemplares){
         this.titulo= titulo;

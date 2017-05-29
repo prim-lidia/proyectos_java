@@ -10,7 +10,17 @@ package practica88;
  * @author lidia
  */
 public class Ejemplar {
-    private String codEjemplar, isbn;
+    /**
+     * Codigo del ejemplar
+     */
+    private String codEjemplar;
+    /**
+     * Código isbn del ejemplar
+     */
+    private String isbn;
+    /**
+     * Estado de prestamo del ejemplar (true=prestado, false=disponible)
+     */
     private boolean prestado;
     /**
      * Constructor por defecto para Ejemplar.
