@@ -139,16 +139,14 @@ public class Menu {
      * @param biblioteca listado de objetos libro
      * @return objeto libro
      */
-    public Libro buscarLibro(String codLibro, ArrayList<Libro> biblioteca){
-        Libro auxLibro;
-        Libro libro=new Libro();
-        for (Libro libros : biblioteca) {
-            auxLibro=libros;
-            if(auxLibro.getCodLibro().equals(codLibro)){
-                libro=libros;
+    public int buscarLibro(String codLibro, ArrayList<Libro> biblioteca){
+        int index=-1;
+        for (Libro libro : biblioteca) {
+            if(libro.getCodLibro().equals(codLibro)){
+                index=biblioteca.indexOf(libro);
             }
         }
-        return libro;
+        return index;
     }
     /**
      * Método para recorrer el Listado de ejemplares buscando coincidencia entre
@@ -158,18 +156,16 @@ public class Menu {
      * @param ejemplares
      * @return objeto ejemplar
      */
-    public Ejemplar buscarEjemplar(String codEjemplar,ArrayList<Ejemplar> ejemplares){
+    public int buscarEjemplar(String codEjemplar,ArrayList<Ejemplar> ejemplares){
         Ejemplar auxEjemplar;
-        Ejemplar ejemplar=new Ejemplar();
-        Libro auxLibro;
+        int index=-1;
         for (Ejemplar ejemplarX : ejemplares) {
-            auxEjemplar=ejemplarX;
-            if(auxEjemplar.getCodEj().equals(codEjemplar)){
-                ejemplar=ejemplarX;
+            if(ejemplarX.getCodEj().equals(codEjemplar)){
+                index=ejemplares.indexOf(ejemplarX);
             }
         }
 
-        return ejemplar;
+        return index;
     }
     /**
      * Método que dado un objeto libro devuvle los datos de este libro por pantalla.
