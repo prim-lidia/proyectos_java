@@ -18,12 +18,10 @@ public class Practica85 {
     public static void main(String[] args) {
         
         ArrayList<Cuenta> bank = new ArrayList<>();
-        Cuenta account = new Cuenta();
-        Cuenta account2 = new Cuenta();
         Cuenta auxAccount;
         Menu m = new Menu();
         String auxOption="", numCuenta;
-        int i,j;
+        int i,index, index2;
         
         while(! auxOption.equals("3")){
             m.MenuCuenta();
@@ -48,13 +46,14 @@ public class Practica85 {
                     /**
                      * Bucle para buscar coincidencia en el numero de cuenta y guradar en variable el objeto
                      */
+                    index=-1;
                     for(i=0; i<bank.size();i++){
                         auxAccount= bank.get(i);
                         if(numCuenta.equals(auxAccount.getNumCuenta())){
-                            account=auxAccount;
+                            index=i;
                         }
                     }
-                    if(account.getNumCuenta().equals("")){
+                    if(index==-1){
                         System.out.println("No existe la cuenta");
                     }else{  //Empieza el segundo menú
                         auxOption="";
@@ -64,39 +63,40 @@ public class Practica85 {
                         
                             switch(auxOption){
                                 case"1":
-                                    account.ingreso(m.pedirImporte());
+                                    bank.get(index).ingreso(m.pedirImporte());
                                     System.out.println("Operación realizada");
-                                    System.out.println("Saldo final: "+account.getSaldo());
+                                    System.out.println("Saldo final: "+bank.get(index).getSaldo());
                                     break;
                                 case"2":
-                                    account.reintegro(m.pedirImporte());
+                                    bank.get(index).reintegro(m.pedirImporte());
                                     System.out.println("Operación realizada");
-                                    System.out.println("Saldo final: "+account.getSaldo());
+                                    System.out.println("Saldo final: "+bank.get(index).getSaldo());
                                     break;
                                 case"3":
                                     /* Buscar cuenta para hacer la transferencia */
                                     numCuenta=m.pedirCuenta2();
+                                    index2=-1;
                                     for(i=0; i<bank.size();i++){
                                         auxAccount= bank.get(i);
                                         if(numCuenta.equals(auxAccount.getNumCuenta())){
-                                        account2=auxAccount;
+                                        index2=i;
                                         }
                                     }
-                                    if(account2.getNumCuenta().equals("")){
+                                    if(index2==-1){
                                         System.out.println("No existe la cuenta.");
                                         System.out.println("No se puede realizar la operación.");
                                     }else{ //Transferencia
-                                        account.transferencia(m.pedirImporte(),account2);
+                                        bank.get(index2).transferencia(m.pedirImporte(),bank.get(index2));
                                         System.out.println("Operación realizada");
-                                        System.out.println("Saldo final: "+account.getSaldo());
-                                        System.out.println("Saldo beneficiario: "+account2.getSaldo());
+                                        System.out.println("Saldo final: "+bank.get(index2).getSaldo());
+                                        System.out.println("Saldo beneficiario: "+bank.get(index2).getSaldo());
                                     }
                                     break;
                                 case"4":
-                                    m.mostrarSaldo(account);
+                                    m.mostrarSaldo(bank.get(index));
                                     break;
                                 case"5":
-                                    m.mostrarDatos(account);
+                                    m.mostrarDatos(bank.get(index));
                                     break;
                                 case"6":
                                     auxOption="";
@@ -105,16 +105,16 @@ public class Practica85 {
                                         auxOption=m.pedirString();
                                         switch(auxOption){
                                             case "1":
-                                                account.setNombre(m.pedirNombre());
+                                                bank.get(index).setNombre(m.pedirNombre());
                                                 break;
                                             case "2":
-                                                account.setApellido1(m.pedirApellido1());
+                                                bank.get(index).setApellido1(m.pedirApellido1());
                                                 break;
                                             case "3":
-                                                account.setApellido2(m.pedirApellido2());
+                                                bank.get(index).setApellido2(m.pedirApellido2());
                                                 break;
                                             case "4":
-                                                account.setTipoInt(m.pedirInteres());
+                                                bank.get(index).setTipoInt(m.pedirInteres());
                                                 break;
                                             case "5":
                                                 break;
