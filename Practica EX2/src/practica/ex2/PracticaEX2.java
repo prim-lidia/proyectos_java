@@ -14,6 +14,8 @@ import java.util.Scanner;
 public class PracticaEX2 {
 
     /**
+     * Programa para desglosar una cantitdad de tiempo en segundos en el
+     * minimo posible de semanas, dias, horas, minutos y segundos.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
