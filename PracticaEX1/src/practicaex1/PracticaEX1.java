@@ -24,19 +24,19 @@ public class PracticaEX1 {
         TrianguloR teorema = new TrianguloR();
         
         switch(opcion){
-            case "A":
+            case "A"://Calular cateto a
                 teorema.setB(m1.pedirB());
                 teorema.setC(m1.pedirC());
                 teorema.calcA();
                 System.out.println("RESULTADO: a = "+teorema.getA());
                 break;
-            case "B":
+            case "B": //Calcular cateto b
                 teorema.setA(m1.pedirA());
                 teorema.setC(m1.pedirC());
                 teorema.calcB();
                 System.out.println("RESULTADO: b = "+teorema.getB());
                 break;
-            case "C":
+            case "C": // calcular cateto c
                 teorema.setA(m1.pedirA());
                 teorema.setB(m1.pedirB());
                 teorema.calcC();
