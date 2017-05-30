@@ -29,26 +29,44 @@ public class Contador {
     }
     
     /**
-     * Metodo para incrementar el valor del contador 
-     * @param variacion
+     * Incrementa sumando el contador con el valor de la variación
+     * @param variacion valor de incremento
      */
     public void incrementarSuma(float variacion){
         contador+=variacion;
     }
+    /**
+     * Incrementa multiplicando el contador con el valor de la variación
+     * @param variacion valor de incremento
+     */
     public void incrementarMult(float variacion){
         contador*=variacion;
     }
+    /**
+     * Decrementa restando el contador con el valor de la variación 
+     * @param variacion valor de decremento
+     */
     public void decrementarResta(float variacion){
         contador-=variacion;
     }
+    /**
+     * Decrementa dividiendo el contador con el valor de la variación 
+     * @param variacion valor de decremento
+     */
     public void decrementarDiv(float variacion){
         contador/=variacion;
     }
-    
+    /**
+     * Modicfica el valor del contador asignandole el valor introducido como parámtero 
+     * @param contador valor para modificar el contador
+     */
     public void setContador(float contador){
         this.contador=contador;
     }
-
+    /**
+     * Devuelve el valor del contador
+     * @return contador
+     */
     public float getContador(){
         return contador;
     } 

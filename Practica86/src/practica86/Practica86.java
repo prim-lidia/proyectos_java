@@ -20,49 +20,47 @@ public class Practica86 {
         Menu m = new Menu();
         String s, operacion;
         float limite, variacion;
+        //Entrada al menú principal
         do{
-            s=m.pedirDirección();   
-            
-        }while(m.validarDir(s)==false);
-                
-        do{
-            operacion=m.pedirOperacion(s);
-        }while(m.validarOperacion(operacion)==false);
-        System.out.println(operacion);
-        i.setContador(m.pedirContador());
-        variacion=m.pedirVar(operacion);
+            s=m.pedirDirección();   //pedir dirección del contador  
+        }while(m.validarDir(s)==false); //Condición para salor del primer menú
         
+        // Entrada al segundo menú       
+        do{
+            operacion=m.pedirOperacion(s); //pedir la operaciñón a realizar entre el contador y la variación
+        }while(m.validarOperacion(operacion)==false);//Condición para salor del primer menú
+        
+        i.setContador(m.pedirContador()); //Pedir y modificar el contador
+        variacion=m.pedirVar(operacion); //Pedir y modificar la variación
+        
+        //Pedir el límite
         do{
             limite=m.pedirLimite();
         }while(m.validarLimite(i.getContador(),limite, operacion)==false);
-
+        
+        //Realizar la operación elegida
         switch(operacion){
-            case "I+":
+            case "I+": //Incrementar sumando
                 while(i.getContador()<limite){
                     i.incrementarSuma(variacion);
                 }
                 break;
-            case "IX":
+            case "IX": // Incrementar multiplicando
                 while(i.getContador()<limite){
                     System.out.println(i.getContador());
                 }
                 break;
-            case "I-":
+            case "I-":// Decrementar restanto
                 while(i.getContador()>limite){
                     i.decrementarResta(variacion);
                 }
                 break;
-            case "I/":
+            case "I/": // Decrementar dividiendo
                 while(i.getContador()>limite){
                     i.decrementarDiv(variacion);
                 }
                 break;
         }
-        int j;
-        
-        /*for(j=1;j<9;j=j+2){
-        System.out.println(j);
-        }*/
         
     }
     
