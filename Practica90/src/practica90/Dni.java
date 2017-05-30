@@ -10,7 +10,13 @@ package practica90;
  * @author lidia
  */
 public class Dni {
+    /**
+     * Numero del dni
+     */
     private int numero;
+    /**
+     * letra del dni
+     */
     private String letra;
     /**
      * Constructor de clase
@@ -27,7 +33,7 @@ public class Dni {
     }
     /**
      * Constructor de clase especificando el numero del dni
-     * @param numero 
+     * @param numero numero del dni
      */
     public Dni(int numero){
         this.numero=numero;
@@ -37,7 +43,7 @@ public class Dni {
     /**
      * Asigna la letra del dni mediante el resto del numero del objeto Dni
      * dividio por 23 y la coincidencia con el indice del listado de letras
-     * @return letra del dni
+     * @return letra letra del dni
      */
     public String definirLetra(){
         String[] Letras={"T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"};
@@ -65,14 +71,14 @@ public class Dni {
     }
     /**
      * Devuelve el numero del dni
-     * @return numero del dni
+     * @return numero numero del dni
      */
     public int getNumero(){
         return numero;
     }
     /**
      * Devuelve la letra del dni
-     * @return letra del dni
+     * @return letra letra del dni
      */
     public String getLetra(){
         return letra;

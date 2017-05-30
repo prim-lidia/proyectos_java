@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Practica90 {
 
     /**
+     * Programa para calcular la letra del dni
      * @param args the command line arguments
      */
     public static void main(String[] args) {
