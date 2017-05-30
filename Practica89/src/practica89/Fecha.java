@@ -11,7 +11,18 @@ import java.util.GregorianCalendar;
  * @author lidia
  */
 public class Fecha {
-    private int dia, mes, año;
+    /**
+     * Dia de la fecha
+     */
+    private int dia;
+    /**
+     * Mes de la fecha
+     */
+    private int mes;
+    /**
+     * Año de la fecha
+     */
+    private int año;
     /**
      * Constructor por defecto.
      */
@@ -23,9 +34,9 @@ public class Fecha {
     /**
      * Constructor que inicializa fecha con los valores introducidos
      * para dia, mes y año
-     * @param dia
-     * @param mes
-     * @param año 
+     * @param dia dia de la fecha
+     * @param mes mes de la fecha
+     * @param año año de la fecha
      */
     public Fecha(int dia,int mes,int año){
         if(fechaValida(dia,mes, año)==true){
@@ -38,21 +49,21 @@ public class Fecha {
     }
     /**
      * Metodo que devuelve el valor del atributo día
-     * @return día
+     * @return día dia de la fecha
      */
     public int getDia(){
         return dia;
     }
     /**
      * Método que devuelve el valor de la atributo mes
-     * @return mes
+     * @return mes mes de la fecha
      */
     public int getMes(){
         return mes;
     }
     /**
      * Método que devuelve el valor de la atributo año
-     * @return año
+     * @return año año de la fecha
      */
     public int getAño(){
         return año;
@@ -60,7 +71,7 @@ public class Fecha {
     /**
      * Método para modificar el valor del atributo año dado
      * el valor introducido como parametro
-     * @param año 
+     * @param año año de la fecha
      */
     public void setAño(int año){
         this.año=año;
@@ -68,7 +79,7 @@ public class Fecha {
     /**
      * Método para modificar el valor del atributo dia dado
      * el valor introducido como parametro
-     * @param dia 
+     * @param dia dia de la fecha
      */
     public void setDia(int dia){
         this.dia=dia;
@@ -76,14 +87,14 @@ public class Fecha {
     /**
      * Método para modificar el valor del atributo mes dado
      * el valor introducido como parametro
-     * @param mes 
+     * @param mes mes de la fecha
      */
     public void setMes(int mes){
         this.mes=mes;
     }
     /**
      * Metodo que devuelve el mes en formato texto.
-     * @return mes en formato texto
+     * @return mes mes en formato texto
      */
     public String getMesTexto(){
         String mesTexto="";
@@ -143,9 +154,9 @@ public class Fecha {
     }
     /**
      * Metodo para saber si el año es bisiesto
-     * @param mes
-     * @param año
-     * @return boolean(true/false) año bisiesto 
+     * @param mes mes de la fecha
+     * @param año año de la fecha
+     * @return boolean (true/false) año bisiesto 
      */
     public boolean bisiesto(int mes, int año){
        boolean bisiesto=false;
@@ -162,9 +173,9 @@ public class Fecha {
     }
     /**
      * Metodo para saber si la fehca es válida
-     * @param dia
-     * @param mes
-     * @param año
+     * @param dia día de la fecha
+     * @param mes mes de la fecha
+     * @param año año de la fecha
      * @return boolean (true/false) fecha valida
      */
     public final boolean fechaValida(int dia,int mes,int año){
