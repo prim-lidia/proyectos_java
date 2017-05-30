@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Practica89 {
 
     /**
+     * Programa para rabajar con la clase fecha
      * @param args the command line arguments
      */
     public static void main(String[] args) {
