@@ -12,6 +12,7 @@ package practicaex1;
 public class PracticaEX1 {
 
     /**
+     * Programa para calcular el lado de un triánuglo rectangula al introducir los otros dos lados
      * @param args the command line arguments
      */
     public static void main(String[] args) {
