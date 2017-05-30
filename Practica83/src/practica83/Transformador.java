@@ -13,6 +13,11 @@ import java.util.regex.Matcher;
  * @author lidia
  */
 public class Transformador {
+     /**
+     * Comprueba si el texto introducido es un número
+     * @param cad   número en formato texto
+     * @return Devuelve true si cad cumple el patrón para ser un número
+     */
     public boolean comprobarNumero(String cad){
         boolean valido;
         
@@ -20,7 +25,11 @@ public class Transformador {
         
         return valido;
     }
-    
+    /**
+     * Comprueba si el texto introducido es un frácción de numeros
+     * @param cad   número en formato texto
+     * @return Devuelve true si cad cumple el patrón para ser un número
+     */
     public boolean comprobarFraccion(String cad){
         boolean valido;
         
@@ -28,7 +37,13 @@ public class Transformador {
         
         return valido;
     }
-    
+    /**
+     * Devuelve el valor númerico del texto cad, si la cadena no cumple 
+     * con las condiciones para pasar a nñumero muestra un mensaje de error y vuelve
+     * a pedir el número.
+     * @param cad texto
+     * @return número entero o decimal
+     */ 
     public float establecerNum(String cad){
         Scanner leer= new Scanner(System.in);
         float num;

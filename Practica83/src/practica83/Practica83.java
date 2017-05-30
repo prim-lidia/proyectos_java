@@ -28,16 +28,15 @@ public class Practica83 {
         m1.pedirC();
         e1.setC(t1.establecerNum(m1.leerString()));//Modificar c
         e1.setD(); //Calcular discriminante
-         //Calcular resultado
-        System.out.println(e1.getA()+"   "+ e1.getB()+"   "+ e1.getC()+"   "+ e1.getD());
-        
-        if(e1.getD()<0){
+         
+        //Calcular resultado que depende del discriminante
+        if(e1.getD()<0){ //no hay resultado
             System.out.println("No hay raices");
         }else{
             e1.setResult();
-            if(e1.getD()==0){
+            if(e1.getD()==0){ //hay un solo resultado
                 System.out.println("x= "+e1.getResult_i(0));
-            }else{
+            }else{ // hay dos resultados
                 System.out.println("x1= "+e1.getResult_i(0));
                 System.out.println("x2= "+e1.getResult_i(1));
             }

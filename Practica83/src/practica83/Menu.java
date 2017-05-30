@@ -12,15 +12,28 @@ import java.util.Scanner;
  * @author lidia
  */
 public class Menu {
+    /**
+     * Pide a por pantalla
+     */
     public void pedirA(){
         System.out.println("Constante a:");
     }
+    /**
+     * Pide b por pantalla
+     */
     public void pedirB(){
         System.out.println("Constante b:");
     }
+    /**
+     * Pide c por pantalla
+     */
     public void pedirC(){
         System.out.println("Constante c:");
     }
+    /**
+     * Devuelve una string pedida por pantalla
+     * @return string
+     */
     public String leerString(){
         Scanner leer= new Scanner(System.in);
         return leer.nextLine();
