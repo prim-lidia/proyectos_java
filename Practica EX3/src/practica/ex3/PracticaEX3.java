@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package practica.ex3;
-import java.util.Scanner;
 /**
  *
  * @author lidia
@@ -12,6 +11,8 @@ import java.util.Scanner;
 public class PracticaEX3 {
 
     /**
+     * Programa para realizar la conversion de una longitud dada en pies 
+     * a yardas, pulgadas y centimetros
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -19,22 +20,20 @@ public class PracticaEX3 {
         Menu m1 = new Menu();
         Conversor conv= new Conversor();
         
-        Scanner read= new Scanner(System.in);
-        
         conv.setFt(m1.pedirFt());
         m1.mostrarMenu();
         m1.setOpcion();
         
         switch(m1.getOpcion()){
-            case "1":
+            case "1": //De pies a yardas
                conv.setResult(conv.ftYd());
                System.out.println(conv.getFt()+"ft = "+conv.getResult()+"yd");
                break;
-            case "2":
+            case "2": // De pies a Pulgadas
                 conv.setResult(conv.ftIn());
                 System.out.println(conv.getFt()+"ft = "+conv.getResult()+"in");
                 break;
-            case "3":
+            case "3": // De pies a Cm
                 conv.setResult(conv.ftCm());
                 System.out.println(conv.getFt()+"ft = "+conv.getResult()+"cm");
                 break;
