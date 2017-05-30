@@ -17,22 +17,22 @@ public class Ecuacion {
     private double[] result= new double[2];
     
     /**
-     * Modifica el lado a
-     * @param n longitud del lado a
+     * Modifica el valor de a
+     * @param n valor de a
      */
     public void setA(float n){
         this.a=n;
     }
     /**
-     * Modifica el lado b
-     * @param n longitud del lado b
+     * Modifica el valor de b
+     * @param n valor de b
      */
     public void setB(float n){
         this.b=n;
     }
     /**
-     * Modifica el lado c
-     * @param n longitud del lado c
+     * Modifica el valor de c
+     * @param n valor de c
      */
     public void setC(float n){
         this.c=n;
@@ -59,22 +59,22 @@ public class Ecuacion {
     }
     
     /**
-     * Devuelve la longitud del lado a
-     * @return longitud del lado a
+     * Devuelve el valor de a
+     * @return valor de a
      */
     public float getA(){
         return a;
     }
     /**
-     * Devuelve la longitud del lado b
-     * @return longitud del lado b
+     * Devuelve el valor de b
+     * @return valor de b
      */
     public float getB(){
         return b;
     }
     /**
-     * Devuelve la longitud del lado c
-     * @return longitud del lado c
+     * Devuelve el valor de c
+     * @return valor de c
      */
     public float getC(){
         return c;

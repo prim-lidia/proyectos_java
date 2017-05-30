@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Practica83 {
 
     /**
+     * El programa pide los valores de a, b, c y calcula el valro de x
      * @param args the command line arguments
      */
     public static void main(String[] args) {
