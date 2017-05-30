@@ -12,6 +12,7 @@ package practica84;
 public class Practica84 {
 
     /**
+     * El programa trabaja con dos cuentas y realiza ciertas operaciones con estas.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
