@@ -21,8 +21,7 @@ public class Contador {
     /**
      * Constructor de la clase Contador donde incializar las propiedades contador y variacion 
      * introducciones los valores respectivos mediante parametros
-     * @param contador
-     * @param variacion 
+     * @param contador valor del contador
      */
     public Contador(float contador){
         this.contador=contador;
